@@ -1,4 +1,6 @@
-#!/usr/bin/env python3
+"""
+status.py file used in nipy.py file
+"""
 # -*- coding: utf-8 -*-
 
 
@@ -30,7 +32,7 @@ class Status:
         """
         try:
             # Send get request to API and get results
-            response: Dict[str, union[str, bool]] = requests.get(url=self.url).json()
+            response: Dict[str, Union[str, bool]] = requests.get(url=self.url).json()
 
             # Fetch Tor and IP status from result
             is_tor: bool = response["IsTor"]
@@ -49,7 +51,7 @@ class Status:
                 f"  [+] IP    : {self.blue}{ip_addr}{self.reset}\n"
             )
 
-        except requests.exceptions.RequestException as e:
+        except requests.exceptions.RequestException:
             return (
                 f"\n  [!]{self.red} Could not get status for TOR! Is Nipy running??{self.reset}\n"
             )

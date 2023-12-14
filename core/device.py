@@ -1,4 +1,6 @@
-#!/usr/bin/env python3
+"""
+device.py file used in pipy file
+"""
 # -*- coding: utf-8 -*-
 
 
@@ -8,9 +10,12 @@ from typing import NoReturn, Tuple, Union
 
 
 class Device:
+    """
+    This class will get device Id and distribution from Os Release
+    """
     def __init__(self) -> NoReturn:
         """
-        This checks OS Release information and gets ID and ID_LIKE for 
+        This checks OS Release information and gets ID and id_like for 
         OS's username and distribution
 
         Parameters:
@@ -35,29 +40,29 @@ class Device:
             On failure: NoReturn"""
         try:
             # Get Os release info
-            OS_info: Dict[str, str] = platform.freedesktop_os_release()
+            os_info: Dict[str, str] = platform.freedesktop_os_release()
 
             # Extract ID and Distro info
-            ID_like: str = OS_info["ID_LIKE"].lower()
-            Distro: str = OS_info["ID"].lower()        
+            id_like: str = os_info["ID_LIKE"].lower()
+            distro: str = os_info["ID"].lower()
 
             # Update username & distribution for fedora based systems 
-            if ID_like == "fedora" or Distro == "fedora":
+            if id_like == "fedora" or distro == "fedora":
                 self.username = "toranon"
                 self.distribution = "fedora"
 
             # Update username & distribution for Arch & CentOS based systems 
-            elif ID_like in ["arch", "centos"] or Distro in ["arch", "centos"]:
+            elif id_like in ["arch", "centos"] or distro in ["arch", "centos"]:
                 self.username = "tor"
                 self.distribution = "arch"
 
             # Update username & distribution for Void Linux 
-            elif Distro == "void":
+            elif distro == "void":
                 self.username = "tor"
                 self.distribution = "void"
 
             # Update username & distribution for Debian based systems 
-            elif ID_like == "debian":
+            elif id_like == "debian":
                 self.username = "debian-tor"
                 self.distribution = "debian"
 
@@ -68,5 +73,5 @@ class Device:
             # Return device info
             return (self.username, self.distribution)
 
-        except:
+        except KeyError:
             return None

@@ -114,8 +114,7 @@ class NiPy:
             )
 
         # Handle invalid argument
-        else:
-            raise SystemExit(f"\n  [*]{self.red} Invalid argument!{self.reset}\n")
+        raise SystemExit(f"\n  [*]{self.red} Invalid argument!{self.reset}\n")
 
 
 def main() -> NoReturn:

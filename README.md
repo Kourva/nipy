@@ -10,7 +10,7 @@ So, basically this is same as [`nipe`](https://github.com/htrgouvea/nipe) but co
 Both doing same thing with same output but found this project cool to make, I will make the GUI version too...
 
 # Installation
-For installation, everything is ready to go, Just have a Linux system which has Python installed and here you go.
+For installation, everything is ready to go, Just have a Linux system which has Python installed and...
 1. **Clone repository**:
 ```bash
 git clone https://github.com/Kourva/nipy
@@ -89,5 +89,17 @@ sudo python nipy.py help
 >  - help       | Show this message
 > ```
 
-
+# Virtual Environment (Optional)
+If you want to use virtual environment for this script, you can do the same steps in installation but before running `install.sh` you must make virtual environment for this tool.
+```bash
+virtualenv venv 
+```
+And active it using:
+```bash
+source venv/bin/activate
+```
+Then you can run `install.sh` or manually install requirements using:
+```bash
+pip install -r requirements.txt
+```
 

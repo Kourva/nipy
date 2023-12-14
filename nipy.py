@@ -69,7 +69,7 @@ class NiPy:
         # Print Device info (will update self.username & self.distribution)
         info: Tuple[str, str] = Device().get_device_info()
         if info:
-            self.argument, self.distribution = info
+            self.username, self.distribution = info
         else:
             raise SystemExit(f"[x] {self.red}Could not get system information!{self.reset}")
         

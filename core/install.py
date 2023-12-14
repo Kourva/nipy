@@ -1,4 +1,6 @@
-#!/usr/bin/env python3
+"""
+install.py file used in nipy.py file
+"""
 # -*- coding: utf-8 -*-
 
 
@@ -9,6 +11,9 @@ from typing import NoReturn, Dict
 
 
 class Install:
+    """
+    This class will install Tor and Iptables for specific distribution 
+    """
     def __init__(self, username: str, distribution: str) -> NoReturn:
         """
         This will install the Tor and Iptables for in system
@@ -36,7 +41,7 @@ class Install:
             "void": "xbps-install -y tor iptables",
             "arch": "pacman -S --noconfirm tor iptables"
         }
-        
+
         # Update TOR service stop command if distro is Void
         if self.distribution == "void":
             self.stop_tor = "sv stop tor > /dev/null"

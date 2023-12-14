@@ -103,3 +103,9 @@ Then you can run `install.sh` or manually install requirements using:
 pip install -r requirements.txt
 ```
 
+# Could not get system information ?
+No problem. you can open issue based on your distribution, so i can edit and add more supports for distros!
+
+# Tests
+Tested on **Kali**: `Working`<br>
+Tested on **Black Arch**: `Not Working` (issue is from platform library, will be fixed soon)<br>

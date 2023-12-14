@@ -132,17 +132,16 @@ def main() -> NoReturn:
     if len(sys.argv) < 2:
         raise SystemExit("\n  [!]\33[1;35m Usage: python nipy.py help\33[m\n")
     
-    else:
-        # Check Platform system
-        if platform.system() != "Linux":
-            raise SystemExit("\n  [x]\33[1;31m Sorry: Only for Linux Distributions!\33[m\n")
+    # Check Platform system
+    if platform.system() != "Linux":
+        raise SystemExit("\n  [x]\33[1;31m Sorry: Only for Linux Distributions!\33[m\n")
 
-        # Check Sudo privilege
-        if os.geteuid() != 0:
-            raise SystemExit("\n  [x]\33[1;31m Error: Sudo privilege required!\33[m\n")
+    # Check Sudo privilege
+    if os.geteuid() != 0:
+        raise SystemExit("\n  [x]\33[1;31m Error: Sudo privilege required!\33[m\n")
 
-        # Run NiPy
-        NiPy(sys.argv[1]).process()
+    # Run NiPy
+    NiPy(sys.argv[1]).process()
 
 
 # Run main program

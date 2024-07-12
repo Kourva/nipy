@@ -13,7 +13,7 @@ Both doing same thing with same output but found this project cool to make, I wi
 For installation, everything is ready to go, Just have a Linux system which has Python installed and...
 1. **Clone repository**:
 ```bash
-git clone https://github.com/Kourva/nipy
+git clone https://github.com/kozyol/nipy
 ```
 2. **Navigate to source's directory**:
 ```bash
